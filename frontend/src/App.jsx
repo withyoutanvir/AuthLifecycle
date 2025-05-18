@@ -1,15 +1,15 @@
-import FloatingShape from "./components/Shape";
+import FloatingShape from "./components/Shape.jsx";
 import {Navigate,Routes, Route} from "react-router-dom";
 import SignUpPage from "./Pages/SignUpPage";
 import LoginPage from "./Pages/LoginPage";
-import EmailVerificationPage from "./Pages/EmailVerificationPage";
+import EmailVerificationPage from "./Pages/EmailVerificationPage.jsx";
 import { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
-import { useAuthStore } from "./store/authStore";
-import DashboardPage from "./Pages/DashboardPage";
-import LoadingSpinner from "./components/LoadingSpinner";
-import ForgotPasswordPage from "./Pages/ForgotPasswordPage";
-import ResetPasswordPage from "./Pages/ResetPasswordPage";
+import { useAuthStore } from "./Store/AuthStore.jsx";
+import DashboardPage from "./Pages/DashboardPage.jsx";
+import LoadingSpinner from "./components/LoadingSpinner.jsx";
+import ForgotPasswordPage from "./Pages/ForgotPasswordPage.jsx";
+import ResetPasswordPage from "./Pages/ResetPasswordPage.jsx";
 
 // Protect routes for authenticated users
 
