@@ -15,7 +15,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchAitopiaLang = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/aitopia/lang", {
+        const response = await fetch(`${VITE_API_URL}/api/aitopia/lang`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text: "Hello from dashboard!" }), // example payload
