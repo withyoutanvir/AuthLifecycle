@@ -11,7 +11,7 @@ const DashboardPage = () => {
   const handleLogout = () => {
     logout();
   };
-
+  
   useEffect(() => {
     const fetchAitopiaLang = async () => {
       try {
