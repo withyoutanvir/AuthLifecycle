@@ -1,7 +1,14 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL.replace(/\/+$/, '') + "/api/auth";
+const baseURL = import.meta.env.VITE_API_URL;
+
+if (!baseURL) {
+  throw new Error("VITE_API_URL is not defined in your .env file");
+}
+
+const API_URL = baseURL.replace(/\/+$/, '') + "/api/auth";
+
 
 
 axios.defaults.withCredentials = true;
