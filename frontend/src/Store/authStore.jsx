@@ -1,7 +1,8 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL + "/api/auth";
+const API_URL = import.meta.env.VITE_API_URL.replace(/\/+$/, '') + "/api/auth";
+
 
 axios.defaults.withCredentials = true;
 
@@ -136,3 +137,5 @@ export const useAuthStore = create((set) => ({
     }
   },
 }));
+console.log("API_URL:", API_URL); // should log: https://authlifecycle-production.up.railway.app/api/auth
+
