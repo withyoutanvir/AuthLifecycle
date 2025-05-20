@@ -1,61 +1,54 @@
-Auth Lifecycle
-A streamlined authentication lifecycle implementation for modern web apps. Handles user signup, login, token management, session handling, and secure logout — all optimized for smooth UX and robust security.
+# Auth Lifecycle
 
-Features
-User Registration with validation
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-in_progress-yellow.svg)]
 
-Login / Logout flows with JWT or session tokens
+> Streamlined authentication lifecycle handling signup, login, token management, sessions, and logout — built for modern web apps with security and UX in mind.
 
-Token Refresh for seamless session management
+---
 
-Password Reset via email (optional)
+## 🚀 Features
 
-Role-based Access Control (RBAC) (if applicable)
+- User signup with validation  
+- Login & Logout flows using JWT or session tokens  
+- Token refresh for seamless session management  
+- Password reset via email (optional)  
+- Role-based access control (future)  
+- Secure token storage (HTTP-only cookies/localStorage)  
+- Clear error handling and user-friendly messages  
 
-Secure storage of tokens (HTTP-only cookies/localStorage)
+---
 
-Error handling and user-friendly feedback
+## ⚠️ Current Status
 
-Current Status
-Note: Currently, authentication works only for the email tanvirxng09@gmail.com.
-Support for multiple users will be enabled once the domain and full user management are set up.
+> Authentication currently supports only the email: `tanvirxng09@gmail.com`  
+> Multi-user support coming post domain setup.
 
-Tech Stack
-Backend: Node.js / Express
+---
 
-Database: MongoDB 
+## 🛠 Tech Stack
 
-Authentication: JWT / OAuth / Passport.js 
+- Backend: Node.js / Express
+- Database: MongoDB 
+- Auth: JWT / OAuth / Passport.js 
+- Frontend: React / Next.js /Tailwindcss
 
-Frontend: React / Tailwindcss
+---
 
-How It Works
-Signup: User submits email & password → validated & saved securely → confirmation response
+## 🔍 How It Works
 
-Login: User submits credentials → verified → JWT token issued & sent securely
+1. **Signup** — User submits email & password → validated → stored securely  
+2. **Login** — Credentials verified → JWT token issued & securely sent  
+3. **Token Refresh** — Access token expiry triggers refresh token flow  
+4. **Protected Routes** — Middleware verifies tokens to allow/deny access  
+5. **Logout** — Tokens cleared client-side → session invalidated server-side  
 
-Token Refresh: Access tokens expire → refresh tokens validate & renew tokens without logout
+---
 
-Protected Routes: Middleware verifies tokens → grants/denies access accordingly
+## ⚙️ Installation & Setup
 
-Logout: Tokens cleared from client → session invalidated on backend
-
-Installation
-bash
-Copy
-Edit
-
+```bash
 git clone https://github.com/yourusername/auth-lifecycle.git
 cd auth-lifecycle
 npm install
 npm run dev
-Usage
-API endpoints for signup, login, refresh, logout
-
-Middleware for protecting routes
-
-Contributing
-Contributions are welcome! Please open issues or submit pull requests.
-
-License
-MIT License © Tanvir Singh
