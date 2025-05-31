@@ -1,4 +1,4 @@
-import jet from"jsonwebtoken";
+import jet from "jsonwebtoken";
 
 
 export const verifyToken = (req, res, next) => {

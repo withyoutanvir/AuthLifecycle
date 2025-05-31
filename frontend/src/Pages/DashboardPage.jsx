@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { useAuthStore } from "../Store/authStore";
 import { formatDate } from "../utils/date";
 import { useEffect, useState } from "react";
@@ -15,7 +15,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchAitopiaLang = async () => {
       try {
-        const response = await fetch(`${VITE_API_URL}/api/aitopia/lang`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/aitopia/lang`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text: "Hello from dashboard!" }), // example payload
@@ -34,7 +34,7 @@ const DashboardPage = () => {
   }, []);
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
@@ -46,7 +46,7 @@ const DashboardPage = () => {
       </h2>
 
       <div className='space-y-6'>
-        <motion.div
+        <Motion.div
           className='p-4 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,9 +55,9 @@ const DashboardPage = () => {
           <h3 className='text-xl font-semibold text-green-400 mb-3'>Profile Information</h3>
           <p className='text-gray-300'>Name: {user.name}</p>
           <p className='text-gray-300'>Email: {user.email}</p>
-        </motion.div>
+        </Motion.div>
 
-        <motion.div
+        <Motion.div
           className='p-4 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,9 +76,9 @@ const DashboardPage = () => {
             <span className='font-bold'>Last Login: </span>
             {formatDate(user.lastLogin)}
           </p>
-        </motion.div>
+        </Motion.div>
 
-        <motion.div
+        <Motion.div
           className='p-4 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -92,16 +92,16 @@ const DashboardPage = () => {
               {aitopiaData ? JSON.stringify(aitopiaData, null, 2) : "No data available"}
             </pre>
           )}
-        </motion.div>
+        </Motion.div>
       </div>
 
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
         className='mt-4'
       >
-        <motion.button
+        <Motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleLogout}
@@ -110,9 +110,9 @@ const DashboardPage = () => {
             focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900'
         >
           Logout
-        </motion.button>
-      </motion.div>
-    </motion.div>
+        </Motion.button>
+      </Motion.div>
+    </Motion.div>
   );
 };
 
